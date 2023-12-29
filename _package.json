@@ -35,7 +35,10 @@
   },
   "homepage": "https://loginov-rocks.github.io/Web-Bluetooth-Terminal",
   "dependencies": {
-    "git-clone": "^0.1.0"
+    "@msgpack/msgpack": "^3.0.0-beta2",
+    "esptool-js": "^0.3.2",
+    "git-clone": "^0.1.0",
+    "pako": "^2.1.0"
   },
   "devDependencies": {
     "bluetooth-terminal": "^1.3.5",

@@ -13,7 +13,7 @@
     <meta name="description"
           content="Progressive Web Application for serial communication with your own Bluetooth Low Energy (Smart) devices">
 
-    <title>Web Bluetooth Terminal</title>
+    <title>AnataLAB ROSARIO</title>
 
     <link rel="manifest" href="manifest.json">
     <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
@@ -34,13 +34,17 @@
 
         <div class="toolbar">
 
-            <div id="device-name" class="name">Terminal</div>
+            <div id="device-name" class="name">AnataLAB ROSARIO</div>
 
             <div class="buttons">
+                <button id="upgrade" type="button" aria-label="Update">
+                    <i class="material-icons">upgrade</i>
+                </button>
 
                 <button id="connect" type="button" aria-label="Connect">
                     <i class="material-icons">bluetooth_connected</i>
                 </button>
+
 
                 <button id="disconnect" type="button" aria-label="Disconnect">
                     <i class="material-icons">bluetooth_disabled</i>
@@ -63,10 +67,17 @@
         </form>
 
     </div>
-
+    <script src="js/chrome.esptool.js"></script>
+    <script src="js/esptool.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/BluetoothTerminal.js"></script>
     <script src="js/main.js"></script>
     <script src="js/companion.js" data-service-worker="sw.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako.min.js"
+        integrity="sha512-g2TeAWw5GPnX7z0Kn8nFbYfeHcvAu/tx6d6mrLe/90mkCxO+RcptyYpksUz35EO337F83bZwcmUyHiHamspkfg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/msgpack-lite/0.1.26/msgpack.min.js"
+        integrity="sha512-harMiusNxs02ryf3eqc3iQalz2RSd0z38vzOyuFwvQyW046h2m+/47WiDmPW9soh/p71WQMRSkhSynEww3/bOA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 </html>

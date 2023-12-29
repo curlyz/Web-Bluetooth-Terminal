@@ -1,6 +1,7 @@
 // UI elements.
 const deviceNameLabel = document.getElementById('device-name');
 const connectButton = document.getElementById('connect');
+const upgradeButton = document.getElementById('upgrade');
 const disconnectButton = document.getElementById('disconnect');
 const terminalContainer = document.getElementById('terminal');
 const sendForm = document.getElementById('send-form');
@@ -61,6 +62,11 @@ connectButton.addEventListener('click', () => {
       });
 });
 
+upgradeButton.addEventListener('click', () => {
+  logToTerminal("Please use the USB cable to upgrade the firmware.");
+  window.burnFirmware();
+});
+
 disconnectButton.addEventListener('click', () => {
   terminal.disconnect();
   deviceNameLabel.textContent = defaultDeviceName;
@@ -82,3 +88,7 @@ terminalContainer.addEventListener('scroll', () => {
 
   isTerminalAutoScrolling = (scrollTopOffset < terminalContainer.scrollTop);
 });
+
+
+
+window.logToTerminal = logToTerminal;

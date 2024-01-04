@@ -33,8 +33,23 @@ const logToTerminal = (message, type = '') => {
 const terminal = new BluetoothTerminal();
 
 // Override `receive` method to log incoming data to the terminal.
-terminal.receive = function(data) {
-  logToTerminal(data, 'in');
+terminal.receive = function (data) {
+  if (data.startsWith("err")) {
+    logToTerminal(data, 'error');
+  }
+  else if (data.startsWith("war")) {
+    logToTerminal(data, 'warn');
+  }
+  else if (data.startsWith("evt")) {
+    logToTerminal('--------------------------------------------', 'in')
+    logToTerminal(data, 'event');
+  }
+  else if (data.startsWith("log")) {
+    logToTerminal(data, "log");
+  }
+  else {
+    logToTerminal(data, "in")
+  }
 };
 
 // Override default log method to output messages to the terminal and console.

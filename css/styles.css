@@ -60,6 +60,12 @@ button {
       color: #F44336; }
     .terminal div.in {
       color: #2196F3; }
+    .terminal div.event {
+      color: magenta; }
+    .terminal div.log {
+      color: #000000; }
+    .terminal div.warning {
+      color: #ff0000; }
 
 .send-form {
   display: flex;
